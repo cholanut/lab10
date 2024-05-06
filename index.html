@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Creating Maps with Leaflet</title>
+<link rel="stylesheet" href=https://unpkg.com/leaflet@1.9.3/dist/leaflet.css integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/>
+<script src=https://unpkg.com/leaflet@1.9.3/dist/leaflet.js integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+</head>
+
+<body>
+<div id="map" style="height: 600px"></div>
+<script>
+var map = L.map('map').setView([13.7563, 100.5018], 10);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+
+}).addTo(map);
+
+var greenIcon = L.icon({
+iconUrl: 'Location-icon.png',
+iconSize: [30, 30],
+iconAnchor: [45, 45],
+popupAnchor: [0, -39]
+});
+
+L.marker([13.75018, 100.49188],{icon:greenIcon}).addTo(map).bindPopup("<b>พระบรมหาราชวัง</b><br>เขตพระนคร, กรุงเทพมหานคร<br>");
+L.marker([13.74217,100.50989],{icon:greenIcon}).addTo(map).bindPopup("<b>วัดมังกร</b><br>เขตสัมพันธวงศ์, กรุงเทพมหานคร<br>");
+L.marker([13.75507,100.49320],{icon:greenIcon}).addTo(map).bindPopup("<b>สนามหลวง</b><br>เขตพระนคร, กรุงเทพมหานคร<br>");
+L.marker([13.75667,100.50182],{icon:greenIcon}).addTo(map).bindPopup("<b>อนุสาวรีย์ประชาธิปไตย</b><br>เขตพระนคร, กรุงเทพมหานคร<br>");
+L.marker([13.73824,100.53270],{icon:greenIcon}).addTo(map).bindPopup("<b>หอประชุมจุฬาลงกรณ์มหาวิทยาลัย</b><br>เขตปทุมวัน, กรุงเทพมหานคร<br>");
+L.marker([13.73946,100.52381],{icon:greenIcon}).addTo(map).bindPopup("<b>อุทยาน 100 ปี จุฬาลงกรณ์มหาวิทยาลัย</b><br>เขตปทุมวัน กรุงเทพมหานคร<br>");
+L.marker([13.74673,100.53492],{icon:greenIcon}).addTo(map).bindPopup("<b>สยามพารากอน</b><br>เขตปทุมวัน, กรุงเทพมหานคร<br>");
+L.marker([13.73849,100.53106],{icon:greenIcon}).addTo(map).bindPopup("<b>ลานหน้าพระบรมรูปสองรัชกาล</b><br>เขตปทุมวัน, กรุงเทพมหานคร<br>");
+</script>
+</body>
+
+</html>
